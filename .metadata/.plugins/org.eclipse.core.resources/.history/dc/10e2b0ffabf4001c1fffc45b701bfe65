@@ -1,0 +1,67 @@
+package application;
+
+public class BinaryTree {
+ 
+	Node root = null;
+	String direct = "novo ";
+
+	public  add Node(Node node, int value) {
+		if (root   == null) {
+			System.out.println(direct);
+			return AddnewNode(value);
+		}
+
+		else if (node.left == null)
+			direct = "ESq";
+		node.left = new Node(root.value);
+			if (node.right == null) { 
+				node.right = new Node(root.value);
+			}
+			else 
+				
+		  
+	 
+		return node;
+	}
+	
+	/**
+	 * else if (node.left.left == null) { node.left.left = add(node.left.left,
+	 * value);
+	 * 
+	 * } else if (node.right.right == null) { node.right.right =
+	 * add(node.right.right, value);
+	 * 
+	 * } else if (node.right.left == null) { node.right.left = add(node.right.left,
+	 * value);
+	 * 
+	 * } else if (node.right.right == null) { node.left.right = add(node.left.right,
+	 * value);
+	 * 
+	 * } else if (node.left.left.left == null) { node.right.left.left =
+	 * add(node.left.left.left, value);
+	 * 
+	 * } else if (node.left.left.right == null) {
+	 * 
+	 * }
+	 * 
+	 * node.right.left.right = add(node.left.left.right, value);
+	 */
+
+	public Node AddnewNode(int value) {
+		Node no = new Node(value, null, null);
+	//	System.out.println("no:" + direct);
+		return no;
+	}
+}
+/**
+ * public int sum(Node node, int value, int height) { int sum = 0;
+ * 
+ * if (height == 1) { sum += node.value; return sum; } else if (height == 2) {
+ * sum += node.left.value + node.right.value; return sum; } else if (height ==
+ * 3) { sum += node.left.left.value + node.left.right.value +
+ * node.right.left.value + node.right.right.value; return sum; } else if (height
+ * == 4) { sum += node.left.left.left.value + node.left.left.right.value +
+ * node.right.left.value + node.right.right.value; return sum; } return sum;
+ * 
+ * } }
+ */

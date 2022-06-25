@@ -1,0 +1,24 @@
+package application;
+
+public class Program {
+
+	public static void main(String[] args) {
+		 
+		Tree tree = new Tree(); 
+		
+		for (int i = 0; i < 10 ; i ++) {
+			tree.insert(i, tree.root);
+			
+		}
+		
+		System.out.println("\nPRE-ORDER");
+		tree.preOrder(tree.root);
+		
+		System.out.println("\nPOS-ORDER");
+		tree.posOrder(tree.root);
+		
+		System.out.println("\nIN-ORDER");
+		tree.inOrder(tree.root);
+	}
+
+}

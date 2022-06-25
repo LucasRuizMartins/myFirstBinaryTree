@@ -1,0 +1,41 @@
+package application;
+
+public class BinaryTree {
+
+	String dir;
+	public Node root;
+	
+
+	void insert(int value, Node node) {// verifica se a raiz esta vazia
+		if (root == null) {
+			 dir = "novo";
+			node = newNode(value,dir);
+		}
+
+		else if (node.left == null) { // verifica se a esquerda esta vazia
+			dir = "Esq";
+			node.left = newNode(value,dir);
+					
+		} //else insert(value, node.left);
+
+		else if (node.right == null) { // caso esquerda tenha algo, verifica se a direita esta vazia
+			dir = "Dir";
+			node.right = newNode(value, dir);
+	
+		}
+		
+
+		else {
+			insert(value, node.right);
+		}
+	}
+ 
+
+public Node newNode(int value, String dir) {
+	Node no = new Node(value);
+	System.out.println(value + dir);
+	return no;
+
+}
+
+}

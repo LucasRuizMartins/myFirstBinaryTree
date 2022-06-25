@@ -1,0 +1,104 @@
+package application;
+
+import javax.swing.text.DefaultEditorKit.InsertBreakAction;
+
+public class Tree {
+
+	String dir;
+	Node root = null;
+
+	public Node add(int value, Node node) {
+		if (node == null) {
+			root = new Node(value);
+			System.out.println("NOVO " + value);
+
+		} else if (node.left == null) {
+			System.out.println("NOVO ESQ" + value);
+			node.left = new Node(value);
+		} else if (node.right == null) {
+			node.right = new Node(value);
+			System.out.println("NOVO DIR " + value);
+
+		}
+		else if (root.left != null) {
+			 add(value, node.left);}
+		else if (root.right != null)
+			add(value, node.right);
+		
+		/**else if (root.left.left == null) {
+			System.out.println(root.left.value);
+			root.left.left = new Node(value);
+			System.out.println("LEF LEF" + root.left.left.value  );
+		} else if (root.right.left == null) {
+
+			root.right.left = new Node(value);
+			
+			System.out.println(root.right.left.value + "RIG LEF ");
+
+		} else if (root.right.right == null) {
+			System.out.println(root.right.value);
+			root.right.right = new Node(value);
+			System.out.println(root.right.right.value + "RIG RIG ");
+		}
+		else if (root.right.left == null) {
+		
+			root.right.left = new Node(value);
+			System.out.println("RIG LEFT " + root.right.left.value   );
+		}
+ 
+		**/
+		 
+		/**
+		 * else { add(value, node.left);} System.out.println("ESQ " + value); }
+		 * 
+		 * else if (node.right == null) { if (value > node.value) { node.right = new
+		 * Node(value); System.out.println("NOVO DIR " + value); } else { add(value,
+		 * node.right); System.out.println("DIR " + value);
+		 * 
+		 * } }
+		 * 
+		 * @return
+		 */
+
+		return node;
+
+	}
+
+	public void check(Node root) {
+		if (root != null) {
+			System.out.println("RooT  VALUE " + root.value);
+		}
+		if (root.left != null) {
+			System.out.println("L : " + root.left.value);
+		}
+		if (root.right != null) {
+			System.out.println("R : " + root.right.value);
+		}
+		if (root.left.left != null) {
+			System.out.println("LL : " + root.left.left.value);
+		}
+		if (root.left.right != null) {
+			System.out.println("LR : " + root.left.right.value);
+		}
+		if (root.left.left.left != null) {
+			System.out.println("LLL : " + root.left.left.left.value);
+		}
+		if (root.left.left.right != null) {
+			System.out.println("LLR : " + root.left.left.right.value);
+		}
+
+		if (root.right.right.left != null) {
+			System.out.println("RL : " + root.right.left.value );
+		}
+		if (root.right.right != null) {
+			System.out.println("RR : " + root.right.right.value );
+		}
+		if (root.left.left.left  != null) {
+			System.out.println("LLL : " + root.left.left.left.value );
+		}
+		if (root.left.left.right  != null) {
+			System.out.println("LLR : " + root.left.left.right.value );
+		}
+
+	}
+}

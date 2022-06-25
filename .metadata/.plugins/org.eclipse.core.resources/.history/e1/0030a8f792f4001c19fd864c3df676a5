@@ -1,0 +1,23 @@
+package application;
+
+public class Node {
+
+	int value;
+	Node right;
+	Node left;
+	
+	
+	public Node() {
+		
+	}
+	
+	public Node(int value, Node right, Node left) {
+		 
+		this.value = value;
+		this.right = right;
+		this.left = left;
+	}
+
+	
+	
+}

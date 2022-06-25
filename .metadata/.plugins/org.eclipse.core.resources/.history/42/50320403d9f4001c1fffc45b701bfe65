@@ -1,0 +1,76 @@
+package application;
+
+import javax.swing.text.DefaultEditorKit.InsertBreakAction;
+
+public class Tree {
+
+	String dir;
+	Node root = null;
+
+	public Node add(int value, Node node) {
+		if (node == null) {
+			root = new Node(value);
+
+		} else if (node.left == null) {
+
+			node.left = new Node(value);
+		} else if (node.right == null) {
+			node.right = new Node(value);
+
+		} else if (node.left.right == null) {
+			add(value, node.left);
+		} else if (node.right.right == null) {
+			add(value, node.right);
+		} else if (node.left.left.right == null) {
+			add(value, node.left);
+		}
+
+		return node;
+
+	}
+
+	public int sum(Node node, int value, int height) {
+		int sum = 0;
+
+		if (height == 1) {
+			sum = node.value;
+			//System.out.println(sum);
+			//return sum;
+		} else if (height == 2) {
+			sum = node.left.value + node.right.value;
+			//System.out.println(sum);
+			//return sum;
+		} else if (height == 3) {
+			sum = node.left.left.value + node.left.right.value + node.right.left.value + node.right.right.value;
+			//System.out.println(sum);
+			//return sum;
+		} else if (height == 4) {
+			sum = node.left.left.left.value + node.left.left.right.value;
+			//System.out.println(sum);
+			//return sum;
+		}
+		return sum;
+	
+	}
+}
+
+//Infelizmente não consegui fazer algo recursivo sem fazer uma arvore binaria ordenada de busca, por isso optei por indicar manualmente os valores
+
+/**
+ * public void check(Node root) { if (root != null) { System.out.println("RooT
+ * VALUE " + root.value); } if (root.left != null) { System.out.println("L : " +
+ * root.left.value); } if (root.right != null) { System.out.println("R : " +
+ * root.right.value); } if (root.left.left != null) { System.out.println("LL : "
+ * + root.left.left.value); } if (root.left.right != null) {
+ * System.out.println("LR : " + root.left.right.value); } if
+ * (root.left.left.left != null) { System.out.println("LLL : " +
+ * root.left.left.left.value); } if (root.left.left.right != null) {
+ * System.out.println("LLR : " + root.left.left.right.value); }
+ * 
+ * if (root.right.left != null) { System.out.println("RL : " +
+ * root.right.left.value); } if (root.right.right != null) {
+ * System.out.println("RR : " + root.right.right.value); } if
+ * (root.left.left.left != null) { System.out.println("LLL : " +
+ * root.left.left.left.value); } if (root.left.left.right != null) {
+ * System.out.println("LLR : " + root.left.left.right.value); } }
+ */

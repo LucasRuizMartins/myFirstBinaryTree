@@ -1,0 +1,27 @@
+package application;
+
+public class BinaryTree {
+
+	public Node add(Node node, int value) {
+		if (node == null) {
+			return newNode(value);
+		}
+		if (node.left == null) {
+			node.left = add(node, value);
+			
+		}else if (node.right == null) {
+			node.right = add(node, value);
+			
+		} 
+			
+		return node;
+
+	}
+
+	public Node newNode(int value) {
+		Node no = new Node(value, null, null);
+
+		return no;
+	}
+
+}

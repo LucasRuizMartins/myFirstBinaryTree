@@ -1,0 +1,34 @@
+package application;
+
+import java.util.ArrayList;
+
+public class Program {
+
+	public static void main(String[] args) {
+
+		BinaryTree arvore = new BinaryTree();
+		Node root = null;
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		int n = 10;
+
+		for (int i = 1; i < n; i++) {
+			System.out.println(i);
+			root = arvore.add(root, i);
+		}
+ 
+		for (int i =0; i < 5 ; i ++) {
+		System.out.println(arvore.sum(root, n, i) );
+		}
+	/**	
+		System.out.println("\nPRE-ORDER");
+		//arvore.preOrder(arvore.root);
+		
+		System.out.println("\nPOS-ORDER");
+		arvore.posOrder(arvore.root);
+		
+		System.out.println("\nIN-ORDER");
+		arvore.inOrder(arvore.root);
+		
+		*/
+	}
+}

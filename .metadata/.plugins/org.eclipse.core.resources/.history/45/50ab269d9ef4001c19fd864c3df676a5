@@ -1,0 +1,26 @@
+package application;
+
+public class Tree {
+
+	Node root = null;
+	int size = 0;
+
+	void insert(int value, Node place) {//verifica se a raiz esta vazia
+		if (place == null) {
+			root = new Node(value);
+		} 
+		
+		else if (place.left == null) { //verifica se a esquerda esta vazia
+			place.left = new Node(value);
+		} 
+		
+		else if (place.right == null) { // caso esquerda tenha algo, verifica se a direita esta vazia
+			place.right = new Node(value);
+		}
+		
+		else  { 
+			insert(value, place.left);
+		} 
+	
+	}
+}

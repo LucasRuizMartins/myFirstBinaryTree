@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+C:\Users\deth_\OneDrive\Área de Trabalho\Programação\java\arvoreBinaria\.metadata\.plugins\org.eclipse.jdt.core
+318884645.index
+3554329799.index
+1345448175.index
+1865797976.index

@@ -1,0 +1,19 @@
+package application;
+
+public class Program {
+
+	public static void main(String[] args) {
+
+		BinaryTree arvore = new BinaryTree();
+		Node root = null;
+		
+		
+		
+		for (int i = 1; i > 10 ; i ++ ) { 
+		root = arvore.add(root, i); 
+	
+		 
+	}
+		}
+
+}
